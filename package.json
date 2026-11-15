@@ -1,0 +1,53 @@
+{
+  "name": "eic-sonic-jukebox",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "author": "Equipo Astra — NASA Space Apps 2026",
+  "description": "NASA Space Apps Challenge 2026 — The Earth Information Jukebox (La máquina de discos de información de la Tierra)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "desktop:start": "npm run build && electron .",
+    "desktop:build": "npm run build && electron-builder --win dir zip"
+  },
+  "build": {
+    "appId": "com.equipoastra.earthjukebox",
+    "productName": "Earth Jukebox",
+    "asar": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "dir",
+        "zip"
+      ],
+      "signAndEditExecutable": false
+    }
+  },
+  "dependencies": {
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tone": "^15.0.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.9",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^45.3.2",
+    "electron-builder": "^26.18.0",
+    "tailwindcss": "^4.0.9",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  }
+}
