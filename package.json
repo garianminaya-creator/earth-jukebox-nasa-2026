@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "main": "electron/main.cjs",
-  "author": "Equipo Astra — NASA Space Apps 2026",
-  "description": "NASA Space Apps Challenge 2026 — The Earth Information Jukebox (La máquina de discos de información de la Tierra)",
+  "author": "Equipo NEXUS — NASA Space Apps 2026",
+  "description": "GeoSonora — NASA Space Apps Challenge 2026: La máquina de discos de información de la Tierra",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
