@@ -67,7 +67,7 @@ export const App: React.FC = () => {
     const t = telemetryRef.current;
     const text = t
       ? `${activeDisc.title}. Región ${t.regionName}. Valor ${t.formattedValue}, ${t.categoryLabel}. Nota ${t.noteName}.`
-      : `${activeDisc.title}. Pulsa espacio para iniciar la Jukebox.`;
+      : `${activeDisc.title}. Pulsa espacio para iniciar GeoSonora.`;
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = 'es-ES';
     window.speechSynthesis.speak(utter);
@@ -122,7 +122,7 @@ export const App: React.FC = () => {
             </div>
             <div>
               <h1 className="text-lg font-bold text-white leading-tight">
-                Earth Jukebox — NASA Space Apps 2026
+                GeoSonora — NASA Space Apps 2026
               </h1>
               <p className="text-xs text-slate-400">
                 La máquina de discos de información de la Tierra •{' '}
