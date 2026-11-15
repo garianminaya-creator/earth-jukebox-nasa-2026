@@ -19,6 +19,11 @@ const MIME_TYPES = {
 let mainWindow = null;
 let staticServer = null;
 
+/**
+ * Sirve la carpeta dist/ en 127.0.0.1 con soporte de peticiones Range (206)
+ * para permitir el desplazamiento instantáneo por años en los videos de NASA SVS
+ * y evitar bloqueos de lectura de píxeles en Canvas.
+ */
 function startStaticDistServer(distDir) {
   return new Promise((resolve, reject) => {
     const server = http.createServer((req, res) => {
@@ -99,7 +104,7 @@ async function createWindow() {
     height: 860,
     minWidth: 1024,
     minHeight: 680,
-    title: 'Earth Jukebox — NASA Space Apps 2026',
+    title: 'GeoSonora — NASA Space Apps 2026',
     backgroundColor: '#050811',
     autoHideMenuBar: true,
     webPreferences: {
